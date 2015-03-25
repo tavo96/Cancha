@@ -1,0 +1,53 @@
+<% if userIsCoordinator %>
+<td><%= link_to 'Nuevo Usuario', "/sign_up" %></td>
+<td><%= link_to 'Horarios', "/timetables" %></td>
+<td><%= link_to 'Carrera', "/runs" %></td>
+
+
+<%end%>
+
+<h1>Lista de reservas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cuenta</th>
+       <% if userIsCoordinator %>
+      <th>Telefono</th>
+      <% end %>
+      <th>Carrera</th>
+      <th>Hora</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @starts.each do |start| %>
+      <tr>
+        <td><%= start.Nombre %></td>
+        <td><%= start.Cuenta %></td>
+        <% if userIsCoordinator %>
+        <td><%= start.Telefono %></td>
+        <% end %>
+        <td><%= start.Carrera %></td>
+        <td><%= start.Hora %></td>
+        <td><%= start.fecha %></td>
+        <td><%= start.Estado %></td>
+        <td><%= link_to 'Mostrar', start %></td>
+        <% if userIsCoordinator %>
+        <td><%= link_to 'Editar', edit_start_path(start) %></td>
+        <td><%= link_to 'Eliminar', start, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Reservacion', new_start_path %>

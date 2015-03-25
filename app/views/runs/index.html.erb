@@ -1,0 +1,27 @@
+<h1>Lista de carreras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Carreras</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @runs.each do |run| %>
+      <tr>
+        <td><%= run.Carreras %></td>
+        <td><%= link_to 'Mostrar', run %></td>
+        <td><%= link_to 'Editar', edit_run_path(run) %></td>
+        <td><%= link_to 'Eliminar', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Carrera', new_run_path %>

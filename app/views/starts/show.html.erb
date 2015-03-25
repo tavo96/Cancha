@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @start.Nombre %>
+</p>
+
+<p>
+  <strong>Cuenta:</strong>
+  <%= @start.Cuenta %>
+</p>
+<% if userIsCoordinator %>
+<p>
+  <strong>Telefono:</strong>
+  <%= @start.Telefono %>
+</p>
+<%end%>
+
+<p>
+  <strong>Carrera:</strong>
+  <%= @start.Carrera %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @start.Hora %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @start.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @start.Estado %>
+</p>
+<% if userIsCoordinator %>
+<%= link_to 'Editar', edit_start_path(@start) %> |
+<%end%>
+<%= link_to 'Atras', starts_path %>
