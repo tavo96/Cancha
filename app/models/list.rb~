@@ -1,4 +1,0 @@
-class List < ActiveRecord::Base
-      attr_accessible :nombre, :cuenta,:timetable_id, :fecha, :telefono
-      belongs_to :timetable 
-end

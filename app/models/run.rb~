@@ -1,5 +1,0 @@
-class Run < ActiveRecord::Base
-  attr_accessible :Carrera
-  has_many :lists
-
-end

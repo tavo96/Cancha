@@ -1,5 +1,0 @@
-<h1>Nueva Carrera</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Atras', runs_path %>
